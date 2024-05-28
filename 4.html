@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моё резюме</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #49debb;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #007bff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #d60404;
+            color: #0d0c0c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #adb300;
+        }
+    </style>
+</head>
+<body>
+    <h1>Моё резюме</h1>
+    <img src="https://i.gifer.com/QY3a.gif" alt="КТО Я?" style="width: 150px; height: 150px; border-radius: 50%; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+    <p>Имя: <span id="name">Матвей</span></p>
+    <p>Фамилия: <span id="surname">Хотарев</span></p>
+ <input type="text" id="newName" placeholder="Введите новое имя">
+ <button onclick="changeName()">Изменить имя</button>
+    <input type="text" id="newSurname" placeholder="Введите новую фамилию">
+    <button onclick="changeSurname()">Изменить фамилию</button>
+    <button onclick="changeBackgroundColor()">Изменить цвет фона</button>
+
+    <script>
+        function changeSurname() {
+            var newSurname = document.getElementById("newSurname").value;
+            document.getElementById("surname").innerText = newSurname;
+        }
+  function changeName() {
+            var newSurname = document.getElementById("newName").value;
+            document.getElementById("name").innerText = newSurname;
+        }
+
+        function changeBackgroundColor() {
+            var randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
